@@ -1,6 +1,6 @@
 // File: counter8b_updown.v
 
-module counter8b_updown (count, clk, reset, dir);
+module counter8b_updown(count, clk, reset, dir);
 
     output reg [8:0] count;
     input clk, reset, dir;

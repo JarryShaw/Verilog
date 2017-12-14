@@ -1,6 +1,6 @@
 // File: filter.v
 
-module filter (sig_out, clock, reset, sig_in);
+module filter(sig_out, clock, reset, sig_in);
 
     output sig_out;
     input clock, reset, sig_in;
