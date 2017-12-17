@@ -8,14 +8,15 @@
 module testbech_comb;
 
     parameter STEP = 16;
+    integer k;
 
     wire Y1, Y2, Y3, Y4;
     reg A, B, C, D;
 
-    comb_str (Y1, A, B, C, D);
-    comb_dataflow (Y2, A, B, C, D);
-    comb_behaviour (Y3, A, B, C, D);
-    comb_prim (Y4, A, B, C, D);
+    comb_str a(Y1, A, B, C, D);
+    comb_dataflow b(Y2, A, B, C, D);
+    comb_behaviour c(Y3, A, B, C, D);
+    comb_prim d(Y4, A, B, C, D);
 
     initial begin
         {A, B, C, D} = 4'b0;

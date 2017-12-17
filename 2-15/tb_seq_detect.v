@@ -4,14 +4,14 @@
 
 module tb_seq_detect;
 
-    parameter STEP = 32,
-
+    parameter STEP = 32;
+    integer k;
 
     wire flag;
     reg [31:0] data;
     reg din,clk, rst_n;
 
-    seq_detect (flag, din, clk, rst_n);
+    seq_detect a(flag, din, clk, rst_n);
 
     initial begin
         clk = 1'b0;
@@ -26,11 +26,10 @@ module tb_seq_detect;
     initial begin
         data = 32'b1100_0110_0100_0110_1010_0100_1010_0010;
         for ( k=1; k<STEP; k=k+1 ) begin
-            #100;
+            #20;
             din = data[31];
             data = data << 1;
         end
-        #100 $stop;
     end
 
 endmodule

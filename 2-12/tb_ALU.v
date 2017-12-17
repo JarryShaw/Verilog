@@ -1,29 +1,34 @@
 // File: tb_ALU.v
 
+`include "ALU.v"
+
 module tb_ALU;
 
-    parameter STEP = 8,
-
+    parameter STEP = 8;
+    integer k;
 
     wire c_out, sum;
     reg [0:2] oper;
-    reg a, b, c, c_in;
+    reg [8:1] a;
+    reg [8:1] b;
+    reg c_in;
+    
+    ALU c(c_out, sum, oper, a, b, c_in);
 
     initial begin
         oper = 3'b0;
         for ( k=1; k<STEP; k=k+1 )
-            #100 oper = oper + 3'b1;
-        #1000 $stop;
+            #5 oper = oper + 3'b1;
     end
 
     initial begin
-        a = 1'b0;
-        forever #5 a = $random % 2;
+        a = 8'b0;
+        forever #5 a = {a[8:1], $random % 2};
     end
 
     initial begin
-        b = 1'b0;
-        forever #10 b = $random % 2;
+        b = 8'b0;
+        forever #10 b = {b[8:1], $random % 2};
     end
 
     initial begin

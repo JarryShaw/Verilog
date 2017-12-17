@@ -9,7 +9,7 @@ module tb_sram;
     reg [7:0] addr;
     reg wr, rd, cs;
 
-    sram (dout, din, addr, wr, rd, cs);
+    sram a(dout, din, addr, wr, rd, cs);
 
     initial begin
         cs = 1'b0;
@@ -22,7 +22,6 @@ module tb_sram;
         din = 8'b1010_0101;
         addr = 8'b0101_1010;
         #100 addr = 8'b1010_0101;
-        #10000 $stop;
     end
 
     initial begin

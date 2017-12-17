@@ -2,9 +2,12 @@
 
 module ALU(c_out, sum, oper, a, b, c_in);
 
-    output reg c_out, sum;
+    output reg [8:1] sum;
+    output reg c_out;
     input [0:2] oper;
-    input a, b, c_in;
+    input [8:1] a;
+    input [8:1] b;
+    input c_in;
 
     always @ ( * ) begin
         case (oper)
@@ -16,7 +19,7 @@ module ALU(c_out, sum, oper, a, b, c_in);
             3'b101: {c_out, sum} <= {1'b0, ~a & b}; // not_ab
             3'b110: {c_out, sum} <= {1'b0, a ^ b};  // exor
             3'b111: {c_out, sum} <= {1'b0, a ~^ b}; // exnor
-            default: {c_out, sum} <= 2'bx;
+            default: {c_out, sum} <= 9'bx;
         endcase
     end
 

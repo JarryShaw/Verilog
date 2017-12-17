@@ -6,13 +6,14 @@
 module top;
 
     parameter STEP = 32;
+    integer k;
 
     wire mealy_flag, moore_flag;
     reg [31:0] data;
     reg din, clk, rst;
 
-    mealy (mealy_flag, din, clk, rst);
-    moore (moore_flag, din, clk, rst);
+    mealy a(mealy_flag, din, clk, rst);
+    moore b(moore_flag, din, clk, rst);
 
     initial begin
         clk = 1'b0;
@@ -21,17 +22,16 @@ module top;
 
     initial begin
         rst = 1'b0;
-        #50 rst = 1'b1;
+        #15 rst = 1'b1;
     end
 
     initial begin
         data = 32'b0110_1010_1010_0011_0110_0001_0101_0101;
         for ( k=0; k<STEP; k=k+1) begin
-            #100;
+            #20;
             din = data[0];
             data = data >> 1;
         end
-        #100 $stop;
     end
 
 endmodule

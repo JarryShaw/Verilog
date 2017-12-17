@@ -1,6 +1,6 @@
 // File: LFSR.v
 
-module LFSR(q, clk, rst_n, loas, din);
+module LFSR(q, clk, rst_n, load, din);
 
     output reg [1:26] q;    // 26 bit data output.
     input clk;              // Clock input.

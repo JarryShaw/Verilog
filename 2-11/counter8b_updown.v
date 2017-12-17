@@ -13,7 +13,7 @@ module counter8b_updown(count, clk, reset, dir);
         case (dir)
             1'b1: count <= count + 8'b1;
             1'b0: count <= count - 8'b1;
-            default: count <= 8'bx;
+            default: count <= 8'b0;
         endcase
     end
 

@@ -6,6 +6,8 @@ module tb_counter8b_updown;
 
     wire [8:0] count;
     reg clk, reset, dir;
+    
+    counter8b_updown a(count, clk, reset, dir);
 
     initial begin
         clk = 1'b0;
@@ -14,14 +16,14 @@ module tb_counter8b_updown;
 
     initial begin
         reset = 1'b1;
-        #1000 reset = 1'b0;
-        #10000 $stop;
+        #100 reset = 1'b0;
+        #100 reset = 1'b1;
     end
 
     initial begin
         dir = 1'b1;
-        #500 dir = 1'b0;
-        #5000 dir = 1'b1;
+        #10 dir = 1'b0;
+        #1000 dir = 1'b1;
     end
 
 endmodule

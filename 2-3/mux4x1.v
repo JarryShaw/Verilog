@@ -7,13 +7,11 @@ module mux4x1(dout, sel, din);
     output dout;
     input [1:0] sel;
     input [3:0] din;
+    
+    wire ta, tb;
 
-    wire temp, b12, b34;
-
-    mux2x1 (b12, sel[0], din[1:0]),
-           (b34, sel[1], din[3:1]);
-
-    or (temp, b12, b34);
-    buf (dout, temp);
+    mux2x1 a(ta, sel[0], din[1:0]),
+           b(tb, sel[0], din[3:1]),
+           c(dout, sel[1], {ta, tb});
 
 endmodule

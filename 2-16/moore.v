@@ -13,7 +13,7 @@ module moore(flag, din, clk, rst);
     parameter S5 = 9'b0_0010_0000;  // E(0)
     parameter S6 = 9'b0_0100_0000;  // F(0)
     parameter S7 = 9'b0_1000_0000;  // G(0)
-    parameter S8 = 9'b1_0000_0000;  // H(0)
+    parameter S8 = 9'b1_0000_0000;  // H(1)
 
     reg [8:0] state;
 
@@ -27,14 +27,14 @@ module moore(flag, din, clk, rst);
         case (state)
             S0: state <= (din) ? S0 : S1;
             S1: state <= (din) ? S2 : S1;
-            S2: state <= (din) ? S4 : S0;
+            S2: state <= (din) ? S0 : S3;
             S3: state <= (din) ? S4 : S1;
             S4: state <= (din) ? S0 : S5;
             S5: state <= (din) ? S6 : S1;
             S6: state <= (din) ? S0 : S7;
             S7: state <= (din) ? S8 : S1;
             S8: state <= (din) ? S0 : S7;
-            default: state <= S0;
+            default: begin state <= S0; flag <= 1'b0; end
         endcase
     end
 

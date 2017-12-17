@@ -19,7 +19,7 @@ module seq_detect(flag, din, clk, rst_n);
 
     reg [8:0] state1;   // 1101
     reg [8:0] state2;   // 0110
-    reg flag1, falg2;
+    reg flag1, flag2;
 
     always @ ( * ) begin
         flag <= flag1 | flag2;
@@ -37,7 +37,7 @@ module seq_detect(flag, din, clk, rst_n);
                 S12: state1 <= (din) ? S12 : S13;
                 S13: state1 <= (din) ? S14 : S10;
                 S14: state1 <= (din) ? S12 : S10;
-                default: state1 <= S10; flag1 <= 1'b0;
+                default: begin state1 <= S10; flag1 <= 1'b0; end
             endcase
         end
     end
@@ -54,7 +54,7 @@ module seq_detect(flag, din, clk, rst_n);
                 S22: state2 <= (din) ? S23 : S21;
                 S23: state2 <= (din) ? S20 : S24;
                 S24: state2 <= (din) ? S22 : S21;
-                default: state2 <= S20; flag2 <= 1'b0;
+                default: begin state2 <= S20; flag2 <= 1'b0; end
             endcase
         end
     end
