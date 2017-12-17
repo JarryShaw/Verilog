@@ -1,33 +1,32 @@
 // File: tb_LFSR.v
 
 `include "LFSR.v"
-`timescale 1ns / 100ps
-`define CYCLE 20
 
 module tb_LFSR;
 
     parameter STEP = 4;
 
     wire [1:26] q;
-    reg clk, rst_n, load, [1:26] din;
+    reg [1:26] din;
+    reg clk, rst_n, load;
 
-    LFSR (q, clk, rst_n, load, din);
+    LFSR a(q, clk, rst_n, load, din);
 
     initial begin
         clk = 1'b0;
-        forever #`CYCLE clk = ~clk;
+        forever #20 clk = ~clk;
     end
 
     initial begin
-        rst_n = 1'b1;
-        #100 rst_n = 1'b0;
+        rst_n = 1'b0;
+        #10 rst_n = 1'b1;
     end
 
     initial begin
         load = 1'b0;
         din = 26'b1_1010;
-        #10000 load = 1'b1;
-        #1000000 $stop;
+        #100 load = 1'b1;
+        #100 load = 1'b0;
     end
 
     initial begin

@@ -5,11 +5,12 @@
 module tb_ones_count;
 
     parameter STEP = 256;
+    integer k;
 
     wire [3:0] count;
     reg [7:0] dat_in;
 
-    ones_count (count, dat_in);
+    ones_count a(count, dat_in);
 
     initial begin
         dat_in = 8'b0;

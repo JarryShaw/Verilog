@@ -2,25 +2,25 @@
 
 module dec_counter(count, clk, reset);
 
-    output [3:0] count;
+    output reg [3:0] count;
     input clk, reset;
 
     always @ ( posedge clk ) begin
-        if (reset) count <= 0;
+        if (reset) count <= 4'd0;
         else begin
             case (count)
-                0: count <= 1;
-                1: count <= 2;
-                2: count <= 3;
-                3: count <= 4;
-                4: count <= 5;
-                5: count <= 6;
-                6: count <= 7;
-                7: count <= 8;
-                8: count <= 9;
-                9: count <= 10;
-                10: count <= 0;
-                default: count <= 3'bx;
+                4'd0: count <= 4'd1;
+                4'd1: count <= 4'd2;
+                4'd2: count <= 4'd3;
+                4'd3: count <= 4'd4;
+                4'd4: count <= 4'd5;
+                4'd5: count <= 4'd6;
+                4'd6: count <= 4'd7;
+                4'd7: count <= 4'd8;
+                4'd8: count <= 4'd9;
+                4'd9: count <= 4'd10;
+                4'd10: count <= 4'd0;
+                default: count <= 4'b0;
             endcase
         end
     end

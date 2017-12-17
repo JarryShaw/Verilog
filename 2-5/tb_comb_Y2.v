@@ -5,11 +5,12 @@
 module tb_comb_Y2;
 
     parameter STEP = 16;
+    integer k;
 
     wire Y;
     reg A, B, C, D;
 
-    comb_Y2 (Y, A, B, C, D);
+    comb_Y2 a(Y, A, B, C, D);
 
     initial begin
         {A, B, C, D} = 4'b0;

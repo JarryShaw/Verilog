@@ -5,11 +5,12 @@
 module tb_comb_str;
 
     parameter STEP = 256;
+    integer k;
 
     wire y;
     reg  sel, A, B, C, D;
 
-    comb_str (y, A, B, C, D);
+    comb_str a(y, A, B, C, D);
 
     initial begin
         sel = 1'b0;
@@ -20,7 +21,6 @@ module tb_comb_str;
         {A, B, C, D} = 4'b0;
         for ( k=1; k<STEP; k=k+1 )
             #1 {A, B, C, D} = {A, B, C, D} + 1'b1;
-        $stop;
     end
 
     initial begin

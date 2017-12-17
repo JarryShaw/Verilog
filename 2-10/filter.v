@@ -2,7 +2,7 @@
 
 module filter(sig_out, clock, reset, sig_in);
 
-    output sig_out;
+    output reg sig_out;
     input clock, reset, sig_in;
 
     wire J, K;
@@ -21,7 +21,7 @@ module filter(sig_out, clock, reset, sig_in);
     always @ ( posedge clock ) begin
         if (!reset) sig_out <= 1'b0;
         else begin
-            case ( {J, K} )
+            case ({J, K})
                 2'b00: sig_out <= sig_out;
                 2'b01: sig_out <= 1'b0;
                 2'b10: sig_out <= 1'b1;

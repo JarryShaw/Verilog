@@ -6,6 +6,7 @@ module ones_count(count, dat_in);
     input [7:0] dat_in;
 
     parameter STEP = 8;
+    integer k;
 
     always @ ( dat_in ) begin
         count = 4'b0;

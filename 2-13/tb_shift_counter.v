@@ -4,21 +4,20 @@
 
 module tb_shift_counter;
 
-    wire count;
+    wire [7:0] count;
     reg clk, reset;
 
-    shift_counter (count, clk, reset);
+    shift_counter a(count, clk, reset);
 
     initial begin
         clk = 1'b0;
-        forever #10 clk ~= clk;
+        forever #10 clk = ~clk;
     end
 
     initial begin
         reset = 1'b0;
         #100 reset = 1'b1;
         #100 reset = 1'b0;
-        #10000 $stop;
     end
 
     initial begin

@@ -5,11 +5,13 @@
 module tb_mux2x1;
 
     parameter STEP = 2;
-
+    integer k;
+    
     wire dout;
-    reg sel, [1:0] din;
+    reg [1:0] din;
+    reg sel;
 
-    mux2x1 (dout, sel, din);
+    mux2x1 a(dout, sel, din);
 
     initial begin
         sel = 1'b0;
@@ -19,8 +21,6 @@ module tb_mux2x1;
 
     initial begin
         din = 2'b01;
-        for ( k=1; k<STEP; k=k+1 )
-            #1 din = din << 1;
     end
 
     initial begin

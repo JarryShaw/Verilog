@@ -29,7 +29,7 @@ module mealy(flag, din, clk, rst);
                 else begin state <= S1; flag <= 1'b0; end
             S2: if (din) begin state <= S0; flag <= 1'b0; end
                 else begin state <= S3; flag <= 1'b0; end
-            S3: if (din) begin state <= S04; flag <= 1'b0; end
+            S3: if (din) begin state <= S4; flag <= 1'b0; end
                 else begin state <= S1; flag <= 1'b0; end
             S4: if (din) begin state <= S0; flag <= 1'b0; end
                 else begin state <= S5; flag <= 1'b0; end
