@@ -6,7 +6,7 @@ module tb_counter8b_updown;
 
     wire [8:0] count;
     reg clk, reset, dir;
-    
+
     counter8b_updown a(count, clk, reset, dir);
 
     initial begin

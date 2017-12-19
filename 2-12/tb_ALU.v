@@ -12,7 +12,7 @@ module tb_ALU;
     reg [8:1] a;
     reg [8:1] b;
     reg c_in;
-    
+
     ALU c(c_out, sum, oper, a, b, c_in);
 
     initial begin

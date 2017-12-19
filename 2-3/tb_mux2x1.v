@@ -6,7 +6,7 @@ module tb_mux2x1;
 
     parameter STEP = 2;
     integer k;
-    
+
     wire dout;
     reg [1:0] din;
     reg sel;
