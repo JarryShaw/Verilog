@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Xilinx/Projects/CascadeLED/tb_cascadeled_isim_beh.exe" -prj "C:/Xilinx/Projects/CascadeLED/tb_cascadeled_beh.prj" "work.tb_cascadeled" "work.glbl" 

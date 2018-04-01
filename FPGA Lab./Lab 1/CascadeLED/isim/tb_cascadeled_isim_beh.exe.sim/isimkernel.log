@@ -1,0 +1,28 @@
+Command line:
+   tb_cascadeled_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50358
+
+Sat Mar 31 20:32:22 2018
+
+
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 672.006 Meg
+
+ Total Signals          : 17
+ Total Nets             : 23
+ Total Signal Drivers   : 8
+ Total Blocks           : 4
+ Total Primitive Blocks : 2
+ Total Processes        : 12
+ Total Traceable Variables  : 33
+ Total Scalar Nets and Variables : 260
+
+ Total Simulation Time: 434.322 sec
+
+ Current Memory Usage: 672.006 Meg
+
+Sat Mar 31 20:46:50 2018
+
