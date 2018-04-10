@@ -1,0 +1,11 @@
+# Output products list for <CNT_ICON>
+CNT_ICON.asy
+CNT_ICON.ncf
+CNT_ICON.ngc
+CNT_ICON.v
+CNT_ICON.veo
+CNT_ICON.vhd
+CNT_ICON.vho
+CNT_ICON.xco
+CNT_ICON_flist.txt
+CNT_ICON_xmdf.tcl

@@ -1,0 +1,12 @@
+# Output products list for <CNT_ILA>
+CNT_ILA.asy
+CNT_ILA.cdc
+CNT_ILA.ncf
+CNT_ILA.ngc
+CNT_ILA.v
+CNT_ILA.veo
+CNT_ILA.vhd
+CNT_ILA.vho
+CNT_ILA.xco
+CNT_ILA_flist.txt
+CNT_ILA_xmdf.tcl
